@@ -11,7 +11,7 @@ window.addEventListener('load', () => {
 let schools = [];
 
 //Get or fetch API
-const getAPI = async () => {
+const getAPI = () => {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open(
     'GET',

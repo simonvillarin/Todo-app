@@ -212,9 +212,9 @@ body {
 .form-control {
   font-family: inherit;
   outline: none;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  border: 2px solid #536dfe;
+  border: 3px solid #536dfe;
   border-radius: 0.25rem;
 }
 
