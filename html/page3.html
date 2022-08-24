@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Poppins (Google Fonts)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="../css/page3.css" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="page1.html" class="nav-link">Add Todo</a>
+          </li>
+          <li class="nav-item">
+            <a href="page2.html" class="nav-link">Todo List</a>
+          </li>
+          <li class="nav-item">
+            <a href="page3.html" class="nav-link">API List</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section>
+      <div class="container">
+        <div class="select">
+          <select id="sort">
+            <option value="">Sort Table</option>
+            <option value="alphabetical">Alphabetical</option>
+            <option value="reverse">Reverse Alphabetical</option>
+          </select>
+        </div>
+
+        <table></table>
+      </div>
+    </section>
+
+    <script src="../javascript/page3.js"></script>
+  </body>
+</html>

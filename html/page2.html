@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Poppins (Google Fonts)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Remixicon CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="../css/page2.css" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="container">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="page1.html" class="nav-link">Add Todo</a>
+          </li>
+          <li class="nav-item">
+            <a href="page2.html" class="nav-link">Todo List</a>
+          </li>
+          <li class="nav-item">
+            <a href="page3.html" class="nav-link">API List</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section>
+      <div class="container">
+        <h1 class="section-title">Todo List</h1>
+        <div class="todo-list"></div>
+      </div>
+    </section>
+
+    <div class="modal-overlay" id="edit-overlay">
+      <div class="modal">
+        <h2 class="modal-title">Edit Todo</h2>
+        <div class="input-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" class="form-control" />
+        </div>
+        <div class="input-group">
+          <label for="body">Body</label>
+          <textarea
+            id="body"
+            cols="30"
+            rows="7"
+            class="form-control"
+          ></textarea>
+        </div>
+        <div class="input-group">
+          <label for="date">Due Date</label>
+          <input id="date" type="date" class="form-control" />
+        </div>
+        <div class="modal-btn">
+          <button id="cancel">Cancel</button>
+          <button id="submit">Submit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="delete-overlay">
+      <div class="modal">
+        <h2 class="modal-title">Delete todo from the list?</h2>
+        <div class="modal-btn">
+          <button id="no">No</button>
+          <button id="yes">Yes</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/page2.js"></script>
+  </body>
+</html>
