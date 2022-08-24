@@ -8,97 +8,126 @@ window.addEventListener('load', () => {
   mapAPI();
 });
 
-let schools = [];
+let arr = [];
 
 //Get or fetch API
 const getAPI = () => {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open(
     'GET',
-    'http://universities.hipolabs.com/search?country=United+States',
+    'https://reqres.in/api/users',
     false
   );
   xmlHttp.send(null);
-  schools = xmlHttp.responseText;
+  let data = xmlHttp.responseText
+  arr = JSON.parse(data);
+  console.log(arr);
 };
 
 const mapAPI = () => {
-  let _schools = JSON.parse(schools);
   table.innerHTML += `
     <tr>
-      <th>School Name</th>
-      <th>Country</th>
-      <th>Website</th>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Email</th>
     </tr>`;
 
-  _schools.splice(0, 20).map((school) => {
+  arr.data.map((a) => {
     table.innerHTML += `
       <tr>
-        <td>${school.name}</td>
-        <td>${school.country}</td>
-        <td><a href="${school.web_pages}" target="_blank">${school.web_pages}</a></td>
+        <td>${a.last_name}</td>
+        <td>${a.first_name}</td>
+        <td>${a.email}</td>
       </tr>
         `;
   });
 };
 
 select.addEventListener('change', () => {
-  let _schools = JSON.parse(schools);
-  if (select.value == 'alphabetical') {
-    let sortedSchools = _schools.splice(0, 20).sort((a, b) => {
-      if (a.name < b.name) {
+  if (select.value == 'lastName') {
+    let newArr = arr.data.sort((a, b) => {
+      if (a.last_name < b.last_name) {
         return -1;
       }
-      if (a.name > b.name) {
+      if (a.last_name > b.last_name) {
         return 1;
       }
       return 0;
     });
-    _schools = sortedSchools;
-
+    let arr1 = newArr;
+  
     table.innerHTML = '';
     table.innerHTML += `
     <tr>
-      <th>School Name</th>
-      <th>Country</th>
-      <th>Website</th>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Email</th>
     </tr>`;
-    _schools.map((school) => {
+    arr1.map((a) => {
       table.innerHTML += `
-        <tr>
-        <td>${school.name}</td>
-        <td>${school.country}</td>
-        <td><a href="${school.web_pages}" target="_blank">${school.web_pages}</a></td>
-      </tr>
+      <tr>
+      <td>${a.last_name}</td>
+      <td>${a.first_name}</td>
+      <td>${a.email}</td>
+    </tr>
         `;
     });
   }
-  if (select.value == 'reverse') {
-    let sortedSchools = _schools.splice(0, 20).sort((a, b) => {
-      if (a.name > b.name) {
+  if (select.value == 'firstName') {
+    let newArr = arr.data.sort((a, b) => {
+      if (a.first_name < b.first_name) {
         return -1;
       }
-      if (a.name < b.name) {
+      if (a.first_name > b.first_name) {
         return 1;
       }
       return 0;
     });
-    _schools = sortedSchools;
-
+    let arr1 = newArr;
+  
     table.innerHTML = '';
     table.innerHTML += `
     <tr>
-      <th>School Name</th>
-      <th>Country</th>
-      <th>Website</th>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Email</th>
     </tr>`;
-    _schools.map((school) => {
+    arr1.map((a) => {
       table.innerHTML += `
-        <tr>
-        <td>${school.name}</td>
-        <td>${school.country}</td>
-        <td><a href="${school.web_pages}" target="_blank">${school.web_pages}</a></td>
-      </tr>
+      <tr>
+      <td>${a.last_name}</td>
+      <td>${a.first_name}</td>
+      <td>${a.email}</td>
+    </tr>
+        `;
+    });
+  }
+  if(select.value == 'email'){
+    let newArr = arr.data.sort((a, b) => {
+      if (a.email < b.email) {
+        return -1;
+      }
+      if (a.email > b.email) {
+        return 1;
+      }
+      return 0;
+    });
+    let arr1 = newArr;
+  
+    table.innerHTML = '';
+    table.innerHTML += `
+    <tr>
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Email</th>
+    </tr>`;
+    arr1.map((a) => {
+      table.innerHTML += `
+      <tr>
+      <td>${a.last_name}</td>
+      <td>${a.first_name}</td>
+      <td>${a.email}</td>
+    </tr>
         `;
     });
   }
